@@ -775,6 +775,13 @@ function setup() {
     assert_success
 }
 
+@test "ggwave_is_disabled_by_default" {
+    local defaults_file="ansible/roles/ovos_installer/defaults/main.yml"
+
+    run grep -q "^ovos_installer_enable_ggwave: false$" "$defaults_file"
+    assert_success
+}
+
 @test "virtualenv_repairs_ownership_before_python_package_installs" {
     local defaults_file="ansible/roles/ovos_virtualenv/defaults/main.yml"
     local file="ansible/roles/ovos_virtualenv/tasks/venv.yml"
