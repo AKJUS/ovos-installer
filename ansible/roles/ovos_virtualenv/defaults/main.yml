@@ -71,7 +71,7 @@ ovos_virtualenv_padatious_cache_backup_dir: "{{ ovos_virtualenv_padatious_cache_
 ovos_virtualenv_padatious_cache_force_sync: "{{ ovos_installer_padatious_cache_force_sync | default(false) }}"
 ovos_virtualenv_messagebus_path: "{{ ovos_installer_user_home }}/.local/bin/ovos-messagebus"
 ovos_virtualenv_rust_messagebus_repo: https://github.com/OscillateLabsLLC/ovos-rust-messagebus
-ovos_virtualenv_rust_messagebus_version: v2.0.0
+ovos_virtualenv_rust_messagebus_version: v2.1.1
 ovos_virtualenv_rust_messagebus_target_arch: >-
   {{ 'aarch64' if (ansible_facts.architecture | default('')) in ['aarch64', 'arm64']
      else 'x86_64' if (ansible_facts.architecture | default('')) in ['x86_64', 'amd64']
@@ -88,12 +88,12 @@ ovos_virtualenv_rust_messagebus_archive_name: "{{ ovos_virtualenv_rust_messagebu
 ovos_virtualenv_rust_messagebus_archive_url: >-
   {{ ovos_virtualenv_rust_messagebus_repo }}/releases/download/{{ ovos_virtualenv_rust_messagebus_version }}/{{ ovos_virtualenv_rust_messagebus_archive_name }}
 ovos_virtualenv_rust_messagebus_archive_checksums:
-  ovos_messagebus-aarch64-apple-darwin.tar.gz: 7a84b1e0e2d2bbbe78e0474063ee2bdcb72125d3f21e4c570042c91db7c64700
-  ovos_messagebus-aarch64-unknown-linux-gnu.tar.gz: 8fe4bb3cad020c21a3a0b436527c85dd635b0e1a1b5984cb3afb8f279f5d4872
-  ovos_messagebus-arm-unknown-linux-gnueabihf.tar.gz: 30041a48df065a1dfeeb35369c4ef15b3615220d5203360a0fde862523f122e7
-  ovos_messagebus-armv7-unknown-linux-gnueabihf.tar.gz: 1e6f088e64c6675c1b2393bfdc62d67704509458b9aec7249b26f209b4b2604c
-  ovos_messagebus-x86_64-apple-darwin.tar.gz: e2a229e241c757bdc3f854e33943de9db787beb90f6c39d88c22ee8fcedf0939
-  ovos_messagebus-x86_64-unknown-linux-gnu.tar.gz: 63b8df5cd1a8666dc0c89a69ceabf9c435a3641c9e9cf9f5a519a615b9e64cfa
+  ovos_messagebus-aarch64-apple-darwin.tar.gz: d06e81c0e60d3d06aa83c02f75d78a3dea83bb6f5b98f52be25215d2f21d6a88
+  ovos_messagebus-aarch64-unknown-linux-gnu.tar.gz: 7d7a6d4fd348e437238dfa1cc5ea75c1fa2b5ca92faa39da980194c1e1002f48
+  ovos_messagebus-arm-unknown-linux-gnueabihf.tar.gz: 4029d2e69eae92aee138cb6690d692b0202699bf696c589fb6154ca4e233b8a7
+  ovos_messagebus-armv7-unknown-linux-gnueabihf.tar.gz: 1a1072e25a944ec2963b50d329381be33c7d0a1c4e4eff6cab566778ff6d4550
+  ovos_messagebus-x86_64-apple-darwin.tar.gz: 5d89f6f020eebb56453828c3cbce07c58caa5afa69ccc3159afe9a3a40a4a8c5
+  ovos_messagebus-x86_64-unknown-linux-gnu.tar.gz: 05c1e8e35041081750f2da9a0da0dc5ac884eb0212ba83c78b9f286db5384d01
 ovos_virtualenv_rust_messagebus_archive_checksum_value: >-
   {{ ovos_virtualenv_rust_messagebus_archive_checksums[ovos_virtualenv_rust_messagebus_archive_name] | default('') }}
 ovos_virtualenv_rust_messagebus_archive_checksum: >-
